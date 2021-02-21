@@ -25,7 +25,7 @@ import tensorflow.compat.v1 as tf
 from models.tf1_only import mobilenet
 from models.tf1_only import mobilenet_conv_blocks as ops
 from models.tf1_only import mobilenet_v2
-from tensorflow.contrib import slim
+import tf_slim as slim
 
 
 def find_ops(optype):

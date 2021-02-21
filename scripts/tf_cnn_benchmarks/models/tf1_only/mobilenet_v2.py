@@ -31,7 +31,7 @@ import tensorflow.compat.v1 as tf
 from models import model
 from models.tf1_only import mobilenet as lib
 from models.tf1_only import mobilenet_conv_blocks as ops
-from tensorflow.contrib import slim
+import tf_slim as slim
 
 op = lib.op
 

@@ -26,7 +26,7 @@ from models import model
 from models.tf1_only import nasnet_utils
 from tensorflow.contrib import framework as contrib_framework
 from tensorflow.contrib import layers as contrib_layers
-from tensorflow.contrib import slim
+import tf_slim as slim
 from tensorflow.contrib import training as contrib_training
 
 arg_scope = contrib_framework.arg_scope

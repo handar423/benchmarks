@@ -149,7 +149,7 @@ def register_model(model_name, dataset_name, model_func):
 
 # pylint: disable=g-import-not-at-top
 try:
-  from tensorflow.contrib import slim  # pylint: disable=unused-import
+  import tf_slim as slim  # pylint: disable=unused-import
   can_import_contrib = True
 except ImportError:
   can_import_contrib = False
@@ -165,13 +165,13 @@ def register_tf1_models():
   """
   if can_import_contrib:
     from models.tf1_only import mobilenet_v2
-    from models.tf1_only import nasnet_model
-    from models.tf1_only import ssd_model
+    # from models.tf1_only import nasnet_model
+    # from models.tf1_only import ssd_model
     register_model('mobilenet', 'imagenet', mobilenet_v2.MobilenetModel)
-    register_model('nasnet', 'imagenet', nasnet_model.NasnetModel)
-    register_model('nasnetlarge', 'imagenet', nasnet_model.NasnetLargeModel)
-    register_model('nasnet', 'cifar10', nasnet_model.NasnetCifarModel)
-    register_model('ssd300', 'coco', ssd_model.SSD300Model)
+    # register_model('nasnet', 'imagenet', nasnet_model.NasnetModel)
+    # register_model('nasnetlarge', 'imagenet', nasnet_model.NasnetLargeModel)
+    # register_model('nasnet', 'cifar10', nasnet_model.NasnetCifarModel)
+    # register_model('ssd300', 'coco', ssd_model.SSD300Model)
   else:
     register_model('mobilenet', 'imagenet', 'TF1_ONLY')
     register_model('nasnet', 'imagenet', 'TF1_ONLY')
